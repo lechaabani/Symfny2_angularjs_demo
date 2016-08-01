@@ -1,3 +1,8 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+together_advertisement:
+    resource: "@TogetherAdvertisementBundle/Controller/"
+    type:     rest
+    prefix:   /advertisement
+  
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

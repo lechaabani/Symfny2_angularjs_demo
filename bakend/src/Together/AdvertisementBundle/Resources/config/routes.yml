@@ -1,0 +1,6 @@
+## YAML Template.
+
+together_advertisement_Home:
+    type: rest
+    prefix: /home
+    resource: "Together\AdvertisementBundle\Controller\HomeController" 
