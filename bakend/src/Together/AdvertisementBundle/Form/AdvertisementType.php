@@ -17,8 +17,7 @@ class AdvertisementType extends AbstractType
         $builder
             ->add('title')
             ->add('body')
-            ->add('createdBy')
-            ->add('createdAt', 'datetime')
+            ->add('createdBy') 
             ->add('image')
         ;
     }

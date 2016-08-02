@@ -68,27 +68,18 @@ swiftmailer:
 
 fos_rest:
     param_fetcher_listener: true
-    view:
-        view_response_listener: 'force'
-        formats:
-            xml:  true
-            json: true
-        templating_formats:
-            html: true
-    format_listener:
-        rules:
-            - { path: ^/, priorities: [ html, json, xml ], fallback_format: ~, prefer_extension:  true }
-    exception:
-        codes:
-            'Symfony\Component\Routing\Exception\ResourceNotFoundException': 404
-            'Doctrine\ORM\OptimisticLockException': HTTP_CONFLICT
-        messages:
-            'Symfony\Component\Routing\Exception\ResourceNotFoundException': true
-    allowed_methods_listener: true
-    access_denied_listener:
-        json: true
     body_listener: true
-    disable_csrf_role: ROLE_API
+    format_listener: true
+    view:
+        mime_types: {'jsonp': ['application/javascript', 'application/javascript+jsonp']}
+        view_response_listener: true
+        formats:
+            xml: true
+            json: true
+            rss: false
+    routing_loader:
+        default_format: json
+    allowed_methods_listener: true
 
 sensio_framework_extra:
     router:      { annotations: true }
@@ -99,3 +90,12 @@ sensio_framework_extra:
     psr_message: { enabled: false } # Defaults to true if the PSR-7 bridge is installed
 
 nelmio_api_doc: ~
+
+nelmio_cors:
+    paths:
+        '^/':
+            allow_credentials: true
+            allow_origin: ['*']
+            allow_headers: ['*']
+            allow_methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
+            max_age: 3600

@@ -42,12 +42,6 @@ class Advertisement
      */
     private $createdBy;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="createdAt", type="datetime", nullable=true)
-     */
-    private $createdAt;
 
     /**
      * @var string
@@ -134,29 +128,6 @@ class Advertisement
     public function getCreatedBy()
     {
         return $this->createdBy;
-    }
-
-    /**
-     * Set createdAt
-     *
-     * @param \DateTime $createdAt
-     * @return Advertisement
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Get createdAt
-     *
-     * @return \DateTime 
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
     }
 
     /**

@@ -23,7 +23,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/rest-bundle": "@dev",
         "jms/serializer-bundle": "@dev",
-        "nelmio/api-doc-bundle": "@dev"
+        "nelmio/api-doc-bundle": "@dev",
+        "nelmio/cors-bundle": "^1.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

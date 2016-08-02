@@ -3,4 +3,4 @@
 together_advertisement_Home:
     type: rest
     prefix: /home
-    resource: "Together\AdvertisementBundle\Controller\HomeController" 
+    resource: "Together\AdvertisementBundle\Controller\AdvertisementController" 
